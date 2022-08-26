@@ -6,3 +6,4 @@ export const signIn = (email, password ) => API.post('/api/login', {email, passw
 export const signUp = (email, password ) => API.post('/api/register', {email, password});
 
 export const fetchUsers = (page) => API.get(`/api/users?page=${page}`);
+export const fetchUser= (id) => API.get(`/api/users/${id}`);

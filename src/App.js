@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import AuthorizationPage from './components/AuthorizationPage';
 import RegistrationPage from "./components/RegistrationPage";
 import UserDetailPage from "./components/UserDetailPage";
+import NotFoundPage from "./components/NotFoundPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           </Route>
           <Route path="/login" element={ <AuthorizationPage />} />
           <Route path="/register" element={ isAuthorized ? <Navigate to="/" /> : <RegistrationPage />} />
+          <Route path='*' status={404} element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
