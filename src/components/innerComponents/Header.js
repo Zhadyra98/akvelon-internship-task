@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom';
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { LOGOUT } from '../constants/actionTypes';
-import decode from 'jwt-decode';
+import { LOGOUT } from '../../constants/actionTypes';
 
 export default function Header() {
     const dispatch = useDispatch();
