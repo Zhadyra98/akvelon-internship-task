@@ -1,10 +1,11 @@
 import { Outlet, Navigate } from 'react-router-dom'
 
 const PrivateRoutes = () => {
-    let authorized = (localStorage.getItem('token')) ? true : false
+
+    let isAuthorized = (localStorage.getItem('profile')) ? true : false
 
     return(
-        authorized ? <Outlet/> : <Navigate to="/login"/>
+        isAuthorized ? <Outlet/> : <Navigate to="/login"/>
     )
 }
 
