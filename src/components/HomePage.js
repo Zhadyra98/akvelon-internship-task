@@ -5,6 +5,7 @@ import { TailSpin } from  'react-loader-spinner'
 import UserItem from "./innerComponents/UserItem";
 import Table from 'react-bootstrap/Table';
 import Header from './innerComponents/Header'
+import Button from "./innerComponents/Button";
 
 export default function HomePage() {
     const { users, isLoading, totalPages } = useSelector((state) => state.users);
@@ -27,16 +28,20 @@ export default function HomePage() {
                         <div className="d-flex justify-content-between">
                             <h2 className="mb-4">Users</h2>
                             <div className="d-flex gap-2">
-                                <button 
-                                    type="button" 
-                                    className={"btn btn-success " + (page===1 ? "disabled" : null) } 
-                                    onClick={() => setPage(prev => prev-1)}> Prev
-                                </button>
-                                <button 
-                                    type="button" 
-                                    className={"btn btn-success " + (page===totalPages ? "disabled" : null) }  
-                                    onClick={() => setPage(prev => prev+1)}>Next
-                                </button>
+                                <Button 
+                                    page = {page}
+                                    setPage = {setPage}
+                                    totalPages = {totalPages}
+                                    text = "Prev"
+                                    incr = {-1}
+                                />
+                                <Button 
+                                    page = {page}
+                                    setPage = {setPage}
+                                    totalPages = {totalPages}
+                                    text = "Next"
+                                    incr = {1}
+                                />
                             </div>
                         </div>
                         <Table>
